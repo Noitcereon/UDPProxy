@@ -18,7 +18,7 @@ namespace RestSensor.Controllers
         public IActionResult GetAll()
         {
             List<SensorData> data = Manager.GetAll();
-            if (data == null)
+            if (data == null || data.Count == 0)
             {
                 return NotFound();
             }

@@ -10,26 +10,31 @@ namespace RestSensor.Managers
     {
         private static readonly List<SensorData> SensorData = new List<SensorData>
         {
-            new SensorData(GenerateId(),  )
+            new SensorData(1, "D2", 22, 28.5),
+            new SensorData(2, "D3", 25, 27.2)
         };
         public List<SensorData> GetAll()
         {
-            throw new System.NotImplementedException();
+            return SensorData;
         }
 
         public SensorData GetOne(int id)
         {
-            throw new System.NotImplementedException();
+            return SensorData.Find(x => x.Id == id);
         }
 
         public string AddData(SensorData newData)
         {
-            throw new System.NotImplementedException();
+            newData.Id = GenerateId();
+            SensorData.Add(newData);
+
+            return $"Added {newData}";
         }
 
         private static int GenerateId()
         {
-            return SensorData.Max(x => x.Id) + 1;
+            int highestId = SensorData.Max((x) => x.Id);
+            return highestId + 1;
         }
     }
 }
