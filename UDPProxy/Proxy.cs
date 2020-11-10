@@ -26,6 +26,7 @@ namespace UDPProxy
                 Console.WriteLine(receivedString);
 
                 SensorData sd = JsonSerializer.Deserialize<SensorData>(receivedString);
+                Console.WriteLine(sd);
                 Console.WriteLine(await PostToRestAsync(JsonSerializer.Serialize(sd)));
 
                 Thread.Sleep(5000);

@@ -8,11 +8,7 @@ namespace RestSensor.Managers
 {
     public class SensorManager
     {
-        private static readonly List<SensorData> SensorData = new List<SensorData>
-        {
-            new SensorData(1, "D2", 22, 28),
-            new SensorData(2, "D3", 25, 27)
-        };
+        private static readonly List<SensorData> SensorData = new List<SensorData>();
         public List<SensorData> GetAll()
         {
             return SensorData;
