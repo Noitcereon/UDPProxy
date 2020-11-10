@@ -6,7 +6,9 @@ namespace UDPProxy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Proxy udpProxy = new Proxy();
+            udpProxy.Start();
+            Console.ReadLine();
         }
     }
 }
